@@ -220,7 +220,7 @@ int main()
 
  	while(T--)
  	{
-        cin >> N;
+        	cin >> N;
         
  		init();
 
@@ -234,32 +234,32 @@ int main()
  			adj[y].push_back(x);
  		}
         
-        root = N;
-        for(int i = N; i >= 1; i--)
-        {
-            if(adj[i].size() == 1)
-            {
-                root = i;
-                break;
-            }
-        }
-        
-        max_depth = 1;
-        depth_check(root,1);
-        
-        if(max_depth == N)
-        {
-            memset(vis,0,sizeof(vis));
-            not_tree(root);
-        }
-        else
-        {
-            si = 0;
-            root = N;
-            memset(vis,0,sizeof(vis));
-            dfs(root);
-            s.clear();
-        }
+        	root = N;
+		for(int i = N; i >= 1; i--)
+		{
+		    if(adj[i].size() == 1)
+		    {
+			root = i;
+			break;
+		    }
+		}
+
+		max_depth = 1;
+		depth_check(root,1);
+
+		if(max_depth == N)
+		{
+		    memset(vis,0,sizeof(vis));
+		    not_tree(root);
+		}
+		else
+		{
+		    si = 0;
+		    root = N;
+		    memset(vis,0,sizeof(vis));
+		    dfs(root);
+		    s.clear();
+		}
  		solve();
  	}
 }
